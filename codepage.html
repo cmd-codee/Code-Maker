@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coderoom</title>
+        <style>
+            html {
+                background-image: url("https://img.freepik.com/free-vector/gradient-geometric-design-on-dark-background_23-2148425667.jpg?w=1060&t=st=1708358507~exp=1708359107~hmac=fca430dbb7899c6df70af9409aa461a1c758924c781eca373846d9d8f4c68d61");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            input[type="submit"], button {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0em 0.4em; /* Поля по вертикали и горизонтали */
+                background-color: transparent; /* Прозрачный цвет фона */
+                text-transform: uppercase; /* Все буквы заглавные */
+                color: #ffffff; /* Цвет текста */
+                border: 2px solid #ffffff; /* Параметры рамки */
+                border-radius: 0.4em; /* Радиус скругления */
+            }
+            h3 {
+                display: flex;
+                justify-content: center;
+                color: #ffffff;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            textarea {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1rem;
+                line-height: 1.5em;
+                font-family: 'Roboto';
+                width: 80%;
+                height: 480px;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 2px solid #535353;
+                border-radius: 4px;
+                background-color: #302e2e;
+                color: #ffffff;
+                font-family: Arial, Helvetica, sans-serif;
+                resize: none;
+            }
+            input[type='text'] {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 1em;
+            }
+            p {
+                display: flex;
+                justify-content: center;
+                color:rgb(255, 255, 255);
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1.1em;
+            }
+            ::-webkit-scrollbar {
+                width: 0;
+            }
+            input[type='text'].del-file {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 1em;
+            }
+            </style>
+    </head>
+    <body>
+        <form action="/._">
+            <input type="submit" value="🗑️Удалить комнату🗑️">
+        </form>
+        <form action="/l">
+            <input type="submit" value="🔓Выйти🔓">
+        </form>
+        <p>ID: {{get}}</p>
+        <p>Ваши файлы:</p>
+        <p>{{all_files}}</p>
+        <p></p><!--В теге <p> будут хранится файлы комнаты-->
+        <form method="post">
+            <input type="text" placeholder="Название файла" name="name">
+            <input type="submit" value="✅сохранить✅" name="open">
+            <p>{{gf}}</p>
+            <textarea name="text">{{content}}</textarea>
+        </form>
+        <form action="/df">
+            <input type="submit" value="❌Удалить файл❌">
+        </form>
+    </body>
+</html>

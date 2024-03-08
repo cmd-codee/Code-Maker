@@ -132,4 +132,4 @@ def df():
 	else:
 		return redirect('/code')
 if __name__ == "__main__":
-	app.run(debug=True)#Для теста в скобки добавте debug=True
+	app.run()#Для теста в скобки добавте debug=True

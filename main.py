@@ -85,13 +85,16 @@ def codepage():
 					cookie.set_cookie('file', f'{get_f}', max_age=60*60*24*365)
 					return cookie
 				    #Открыти файла
+		file = ""
+		for l in cursor.execute("SELECT * FROM Files"):
+			file = file + l[0] + " - " + l[1] + "\n"
 		if gf != None:
 			sql = "SELECT * FROM Files WHERE room_id = ? AND name = ?"
 			for row in cursor.execute(sql, (get, gf, )):
 				content = row[3]
-				return render_template('codepage.html', get=get, content=content, gf=gf)
+				return render_template('codepage.html', get=get, content=content, gf=gf), file=file
 			else:
-				return render_template('codepage.html', get=get, gf=gf)
+				return render_template('codepage.html', get=get, gf=gf, file=file)
 		else:
 			return render_template('codepage.html', get=get)
 		#Данная конструкция необходима для получение содержания файла
